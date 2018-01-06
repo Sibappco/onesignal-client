@@ -4,7 +4,7 @@ namespace Sibapp\Onesignal ;
 
 use Illuminate\Support\ServiceProvider;
 
-class SibappOnesignalClientServiceProvider extends ServiceProvider
+class OnesignalClientServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,7 +14,7 @@ class SibappOnesignalClientServiceProvider extends ServiceProvider
     public function boot()
     {
 	    $configPath = __DIR__ . '/Config/onesignal.php';
-	    $this->publishes([$configPath => config_path('config.php')], 'config');
+	    $this->publishes([$configPath => config_path('onesignal.php')], 'config');
 	    $this->mergeConfigFrom($configPath, 'onesignal');
 	    if ( class_exists('Laravel\Lumen\Application') ) {
 		    $this->app->configure('onesignal');
@@ -28,12 +28,12 @@ class SibappOnesignalClientServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	    $this->app->singleton(SibappOneSignalClient::class, function ($app) {
+	    $this->app->singleton(OneSignalClient::class, function ($app) {
 		    $config = isset($app['config']['services']['onesignal']) ? $app['config']['services']['onesignal'] : null;
 		    if (is_null($config)) {
 			    $config = $app['config']['onesignal'] ?: $app['config']['onesignal::config'];
 		    }
-		    $client = new SibappOneSignalClient($config['app_id'],$config['rest_api_key'],$config['user_auth_key']);
+		    $client = new OneSignalClient($config['app_id'],$config['rest_api_key'],$config['user_auth_key']);
 		    return $client;
 	    });
     }

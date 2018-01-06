@@ -7,7 +7,7 @@
 namespace Sibapp\Onesignal;
 use Carbon\Carbon;
 
-class SibappOneSignalClient
+class OneSignalClient
 {
 	private $client;
 	private $appId;
