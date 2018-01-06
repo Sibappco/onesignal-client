@@ -4,9 +4,6 @@
     "keywords": ["Laravel", "OneSignal"],
     "license": "MIT",
     "type": "library",
-    "require": {
-        "guzzlehttp/guzzle": "^6.3"
-    },
     "authors": [
         {
             "name": "Bahador Babazadeh",
