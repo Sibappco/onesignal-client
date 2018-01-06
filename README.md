@@ -1,1 +1,1 @@
-#OneSignal Client
+#OneSignal Client Laravel Package
