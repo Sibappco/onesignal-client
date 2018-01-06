@@ -6,8 +6,16 @@
     "type": "library",
     "authors": [
         {
-            "name": "Bahador Babazadeh",
+           "name": "Bahador Babazadeh",
             "email": "email.bahador@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sibapp\\Onesignal\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
 }
