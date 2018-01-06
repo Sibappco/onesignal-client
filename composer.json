@@ -3,7 +3,10 @@
     "description": "OneSignal PushNotification Client Laravel Package",
     "keywords": ["Laravel", "OneSignal"],
     "license": "MIT",
-    "type": "library",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
     "authors": [
         {
             "name": "Bahador Babazadeh",
