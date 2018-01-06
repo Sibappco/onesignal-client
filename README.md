@@ -15,7 +15,7 @@ Then, update `config/app.php` by adding an entry for the service provider.
 
     'providers' => [
 	// ...
-	\Sibapp\Onesignal\SibappOnesignalClientServiceProvider::class
+	\Sibapp\Onesignal\OnesignalClientServiceProvider::class
 ];
 
 Finally, from the command line again, run
