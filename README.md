@@ -15,7 +15,7 @@ Then, update `config/app.php` by adding an entry for the service provider.
 
     'providers' => [
 	// ...
-	\Sibapp\Onesignal\OnesignalClientServiceProvider::class
+	\Sibapp\Onesignal\SibappOnesignalClientServiceProvider::class
 ];
 
 Finally, from the command line again, run
@@ -26,3 +26,14 @@ to publish the default configuration file. This will publish a configuration fil
 Configuration
 -------------
 You need to fill in onesignal.php file that is found in your applications config directory. `app_id` is your OneSignal App ID , `user_auth_key` is your User Auth Key and `rest_api_key` is your REST API Key.
+
+
+----------
+
+
+Usage
+-----
+**Get Device Info**
+You can Get Player Device Info with
+
+       viewDevice("PLAYER ID")
