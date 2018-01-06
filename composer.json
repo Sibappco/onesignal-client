@@ -1,0 +1,16 @@
+{
+    "name": "sibappco/onesignal-client",
+    "description": "OneSignal PushNotification Client Laravel Package",
+    "keywords": ["Laravel", "OneSignal"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Bahador Babazadeh",
+            "email": "email.bahador@gmail.com"
+        }
+    ]
+}
