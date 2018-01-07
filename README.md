@@ -33,7 +33,47 @@ You need to fill in onesignal.php file that is found in your applications config
 
 Usage
 -----
-**Get Device Info**
-You can Get Player Device Info with
+**Sending a Notification To All Users**
+   
 
-       viewDevice("PLAYER ID")
+     <?php
+        use Sibapp\Onesignal\OneSignalClient;
+        use Sibapp\Onesignal\OneSignalMessage;
+        use Sibapp\Onesignal\OneSignalReceiver;
+        Route::get('/', function (OneSignalClient $oneSignalClient) {
+        	$oneSignallMessagge=new OneSignalMessage();
+        	$oneSignalReceiver=new OneSignalReceiver();
+        	$oneSignallMessagge->body("TEST BODY");
+        	$oneSignallMessagge->subject("TEST SUBJECT");
+        	$oneSignalReceiver->setToAll();
+        	$oneSignalClient->createNotification($oneSignallMessagge,$oneSignalReceiver);
+        });
+        ?>
+**Get Notification Detail**
+
+    <?php
+    use Sibapp\Onesignal\OneSignalClient;
+    Route::get('/', function (OneSignalClient $oneSignalClient) {
+    	$oneSignalClient->getNotification('Notification ID');
+    });
+    ?>
+
+**Cancel Notification**
+   
+
+     <?php
+        use Sibapp\Onesignal\OneSignalClient;
+        Route::get('/', function (OneSignalClient $oneSignalClient) {
+        	$oneSignalClient->cancelNotification('Notification ID');
+        ?>
+    
+
+**View Player Device Info**
+
+    <?php
+    use Sibapp\Onesignal\OneSignalClient;
+    Route::get('/', function (OneSignalClient $oneSignalClient) {
+    	$oneSignalClient->viewDevice('Player ID');
+    });
+    ?>
+    
