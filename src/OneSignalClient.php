@@ -155,6 +155,10 @@ class OneSignalMessage
 	protected $buttons = [];
 	/** @var array */
 	protected $webButtons = [];
+	/**
+	 * @var
+	 */
+	protected $subtitle;
 
 	/**
 	 * @param string $body
@@ -274,6 +278,7 @@ class OneSignalMessage
 		$message = [
 			'contents' => ['en' => $this->body],
 			'headings' => ['en' => $this->subject],
+			'subtitle' => ['en' => $this->subtitle],
 			'url' => $this->url,
 			'buttons' => $this->buttons,
 			'web_buttons' => $this->webButtons,
