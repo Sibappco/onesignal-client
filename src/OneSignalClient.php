@@ -155,9 +155,7 @@ class OneSignalMessage
 	protected $buttons = [];
 	/** @var array */
 	protected $webButtons = [];
-	/**
-	 * @var
-	 */
+	/** @var string */
 	protected $subtitle;
 
 	/**
@@ -201,6 +199,19 @@ class OneSignalMessage
 	public function icon($value)
 	{
 		$this->icon = $value;
+		return $this;
+	}
+
+	/**
+	 * Set the message icon.
+	 *
+	 * @param string $value
+	 *
+	 * @return $this
+	 */
+	public function subtitle($value)
+	{
+		$this->subtitle = $value;
 		return $this;
 	}
 
